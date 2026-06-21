@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#006837",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-tint": "#0b6d3b",
+                    "secondary-fixed-dim": "#ffb956",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00210e",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#c6d1e9",
+                    "secondary": "#835400",
+                    "on-secondary-fixed-variant": "#633f00",
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-fixed": "#2a1800",
+                    "on-primary-fixed-variant": "#00522a",
+                    "primary-fixed-dim": "#83d99c",
+                    "tertiary": "#384356",
+                    "on-background": "#191c1e",
+                    "surface-bright": "#f7f9fb",
+                    "outline-variant": "#bec9be",
+                    "surface-container": "#eceef0",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-container": "#6e4600",
+                    "primary": "#004d27",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "on-surface-variant": "#3f4940",
+                    "on-tertiary-fixed": "#111c2d",
+                    "tertiary-fixed": "#d8e3fb",
+                    "inverse-primary": "#83d99c",
+                    "tertiary-container": "#4f5a6e",
+                    "on-secondary": "#ffffff",
+                    "outline": "#6f7a70",
+                    "secondary-container": "#fdb242",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed": "#ffddb5",
+                    "on-primary-container": "#8ee4a6",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "primary-fixed": "#9ef6b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "margin-desktop": "48px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant flex items-center justify-between px-margin-mobile py-4 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-150 transition-colors hover:bg-surface-container-high rounded-full p-2">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">ImmoCamer</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 duration-150 transition-colors hover:bg-surface-container-high rounded-full p-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="share">share</span>
+</button>
+<button class="active:scale-95 duration-150 transition-colors hover:bg-surface-container-high rounded-full p-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="favorite">favorite</span>
+</button>
+</div>
+</header>
+<main class="pb-32">
+<!-- Image Gallery -->
+<section class="relative w-full overflow-hidden bg-surface-container">
+<div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar h-[350px]">
+<div class="flex-shrink-0 w-full snap-center relative">
+<img class="w-full h-full object-cover" data-alt="A luxurious modern studio apartment in Bastos, Yaoundé, showcasing a sleek open-plan design with high-end finishes. The room is flooded with natural light from large windows, highlighting the forest green and warm oak accents. The furniture is minimalist yet comfortable, creating an atmosphere of institutional trust and modern elegance. Soft morning light creates long shadows across the polished floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcnZLdinxxfFVt7vexiV_sVmGrbmt4S6UWn6O5zKQthh_oPFV-7DZIxdl6C217MMHV0CmUItCJ_c2AnVM2r7hpPAlbiAA5oQm6Btx_YZs1ajhglb7Kk9AcxRBznHmiAHKaWmfhUC-KRNDnvDhM9zGfJdjZAwPiUvF0DoOBkow39vNfmWUmbA4ruxhzZwOeN7Y_x5t4mD7yLYLxM0LyTNxKqT7La-wrqe1viC6PyjEw0rKTheJiHJGor0ZrdUwpcusdmdc5eWV6z0"/>
+</div>
+<div class="flex-shrink-0 w-full snap-center relative">
+<img class="w-full h-full object-cover" data-alt="Detailed view of a high-end kitchenette in a Cameroonian luxury studio. The design features charcoal cabinetry with brass handles, a marble countertop, and state-of-the-art appliances. The lighting is sophisticated, with under-cabinet LEDs casting a warm glow over a clean, organized workspace. The overall aesthetic is professional and robust, mirroring enterprise-grade quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSgnh1XjwkWkGY_pawtF1GzunkIsqd5PtiJg3BI8imyulcUWv9zHEAmIelr204s1wHkKCdX3ozA3gLQuejXxDC1MgxiA5DSEGxJAl2-dfuFxKZ3Ai97RfUAZaw_eY1mY-P0PkNumPnQyGvD9ksnNk6StY-9o3qIrFtzAr7XKML7uUxWZvVo6gxPUpSPpjaT9aQOn5jiIKWKH-diSBR0iMYnqFgSZnPylXX6H04c1iUbZLgrsbpngMzUhXx2vQjZrs8lAlUislYWlI"/>
+</div>
+<div class="flex-shrink-0 w-full snap-center relative">
+<img class="w-full h-full object-cover" data-alt="Spacious bathroom of a premium apartment in Yaoundé, featuring floor-to-ceiling slate tiles and a modern glass shower enclosure. The scene is lit by soft, diffused light that emphasizes the texture of the materials and the cleanliness of the space. A small potted plant provides a touch of growth and vitality, consistent with the brand's national colors of green and natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxJJdKVgDHi8t0wD8brG4FXo-6an7W1WpGfQNFZTjOsyFPfQv9uENhj5OsTv0sH42Fsz2_tsydObGWZhlSTaLWfjLHTFsoK4ztOAgMBPMGA881vIuVkSCOnVKa1bkH2kGU8cgagcG9H3zfArzN3vwloPKbMTslTSOcyYTIIOANdpZXhj9Bcmr8JkS0o6_4RzfT-2H5VqnF9LhJpSAtE1OzlcjtNkIhFmAlONq7DYV2iHkonvI9gDy5Q1EVKTFWyccKMSVs9ZXpGQo"/>
+</div>
+</div>
+<!-- Gallery Overlay -->
+<div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-label-sm font-label-sm backdrop-blur-md">
+                1/8
+            </div>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-label-md font-label-md flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Verified Listing
+            </div>
+</section>
+<section class="px-margin-mobile mt-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-wider">Premium Studio • Bastos</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Modern Executive Studio</h2>
+</div>
+<div class="bg-primary-container/10 p-2 rounded-xl text-center min-w-[100px]">
+<span class="block font-headline-md text-headline-md text-primary font-bold">250k</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">XAF / Month</span>
+</div>
+</div>
+<!-- Trust Badge Section -->
+<div class="mt-6 flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant px-4 py-3 rounded-xl flex-1 min-w-[160px]">
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Verified Land Title</p>
+<p class="text-[10px] text-on-surface-variant leading-none">Official Govt. Authenticated</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant px-4 py-3 rounded-xl flex-1 min-w-[160px]">
+<div class="bg-secondary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">24/7 Security</p>
+<p class="text-[10px] text-on-surface-variant leading-none">Gate Guard &amp; CCTV</p>
+</div>
+</div>
+</div>
+<!-- Features Bento Grid -->
+<div class="mt-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Key Features</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="aspect_ratio">aspect_ratio</span>
+<span class="text-on-surface font-label-md text-label-md">45 m² Space</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="ac_unit">ac_unit</span>
+<span class="text-on-surface font-label-md text-label-md">Air Conditioning</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="bolt">bolt</span>
+<span class="text-on-surface font-label-md text-label-md">Eneo Backup</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="water_drop">water_drop</span>
+<span class="text-on-surface font-label-md text-label-md">Water Reservoir</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="mt-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Description</h3>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                    Exquisite executive studio located in the heart of Bastos, Yaoundé. Perfect for expatriates or business professionals. High-security neighborhood with paved access. Features include high-speed fiber internet availability, modern fittings, and a dedicated parking spot.
+                </p>
+<button class="mt-2 text-primary font-label-md text-label-md flex items-center gap-1">
+                    Read more <span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Agent Section -->
+<div class="mt-8 p-4 bg-surface-container-low rounded-2xl border border-outline-variant">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Professional headshot of a Cameroonian real estate agent named Jean Dupont. He is wearing a sharp charcoal suit and smiling confidently. The background is a blurred office setting with warm lighting, conveying a sense of institutional trust and expertise. A small, subtle 'Certified' badge icon is overlaid in the corner of his profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZKtB0V9_Tr8kUL7mjeqtRvukMr1bsl5KhCYE95dAVakf1RjL2Wdp2vW-s6t2ZJyy_k_cEGL-TT8JfcpYpwpOC50BToL4o8baJPRKCdfIiT5dTP5-wqUU86rudrZy5ezd6J9XSLC9Y0JNgs3O_T1j1REWgzypeF2-WFbo7A-U9Bcay4BrtQQg_JOLfjzFaTKyef32PmWIe0JrKre2SWDm0DgiRBxfCYDozB1Ui6fASuorVCZ8CowGRmVrwwdILChRt22qQiADmcGE"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white p-1 rounded-full border-2 border-surface-container-low">
+<span class="material-symbols-outlined text-[10px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-label-md text-label-md text-on-surface">Jean Dupont</h4>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Certified</span>
+</div>
+<p class="text-on-surface-variant text-label-sm font-label-sm">Verified Agent • 4.9 ★ (120 reviews)</p>
+</div>
+</div>
+<button class="bg-white border border-outline-variant text-on-surface-variant px-4 py-2 rounded-full text-label-sm font-label-sm hover:bg-surface-container-high transition-colors">
+                        View Profile
+                    </button>
+</div>
+</div>
+<!-- Location -->
+<div class="mt-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Location</h3>
+<span class="text-primary font-label-md text-label-md">Bastos, Yaoundé</span>
+</div>
+<div class="w-full h-48 rounded-2xl overflow-hidden border border-outline-variant relative">
+<img class="w-full h-full object-cover grayscale-[20%] contrast-[110%]" data-location="Yaoundé" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxrFWG6qmVxEJvH3fHeSGzYljQaNwWKJeHobmuEwMQsqF7HPxTWWWmSnbfqjrK3INDU0WdI0NGP8q97D9yvqgMXBfxJRUWnKpFQ-uCsobpWA_9vhRFVaiR91HssXDG3o6ZT5_z2JzLhu38ybiA0cDWZMBsjLEOZiDEywTh_71SQMnvG2MxNztj0kx38qdW2KOcJtxmciGFC5GynK6ZoQH8sEP-JVwe0mussyjeQz0pfqLBkIS0id80UZTCqidjzGyxhZ0cGLS0mQw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 bg-primary rounded-full border-2 border-white"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom CTA Section -->
+<section class="fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant p-4 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+<div class="max-w-[1280px] mx-auto flex items-center gap-4">
+<button class="w-14 h-14 border border-outline-variant flex items-center justify-center rounded-2xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+</button>
+<div class="flex-1">
+<button class="w-full bg-secondary-container hover:bg-secondary transition-colors text-on-secondary-container hover:text-on-secondary font-bold py-4 rounded-2xl flex flex-col items-center justify-center active:scale-95 duration-150 shadow-sm">
+<span class="text-label-md font-label-md">Pay Visit Fee</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-headline-md font-extrabold">5,000 XAF</span>
+<div class="flex gap-1">
+<div class="w-5 h-5 bg-[#FFCC00] rounded-sm flex items-center justify-center text-[8px] font-black text-black">MTN</div>
+<div class="w-5 h-5 bg-[#FF6600] rounded-sm flex items-center justify-center text-[8px] font-black text-white">ORNG</div>
+</div>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Nav (Shell implementation) - Mobile Only -->
+<nav class="fixed bottom-0 w-full z-40 bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-16 px-4 md:hidden opacity-0 pointer-events-none">
+<!-- Kept for structural consistency but hidden as per UX Goal (task-focused sub-page) -->
+</nav>
+<script>
+        // Micro-interaction for gallery scroll tracking
+        const gallery = document.querySelector('.snap-x');
+        const counter = document.querySelector('.bg-black\\/50');
+        gallery.addEventListener('scroll', () => {
+            const index = Math.round(gallery.scrollLeft / gallery.clientWidth) + 1;
+            counter.innerText = `${index}/8`;
+        });
+    </script>
+</body></html>

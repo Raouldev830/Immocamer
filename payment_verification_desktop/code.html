@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment &amp; Verification | ImmoCamer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522a",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#0b6d3b",
+                        "on-surface-variant": "#3f4940",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed-dim": "#83d99c",
+                        "primary": "#004d27",
+                        "on-primary-fixed": "#00210e",
+                        "outline-variant": "#bec9be",
+                        "on-secondary-fixed": "#2a1800",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary": "#835400",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-fixed": "#d8e3fb",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed-dim": "#ffb956",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#ffddb5",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-container": "#006837",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#9ef6b6",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7a70",
+                        "inverse-primary": "#83d99c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "on-tertiary-fixed": "#111c2d",
+                        "on-secondary-container": "#6e4600",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#384356",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "secondary-container": "#fdb242",
+                        "on-tertiary-container": "#c6d1e9",
+                        "on-primary-container": "#8ee4a6",
+                        "tertiary-container": "#4f5a6e",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "margin-desktop": "48px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .stepper-line {
+            height: 2px;
+            flex-grow: 1;
+            background-color: #bec9be;
+        }
+        .stepper-line.active {
+            background-color: #004d27;
+        }
+        .payment-card-selected {
+            border: 2px solid #004d27;
+            background-color: #f2f4f6;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-outline-variant h-20 w-full z-50">
+<div class="flex justify-between items-center px-margin-desktop w-full max-w-[1280px] mx-auto h-full">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary">ImmoCamer</span>
+<nav class="hidden md:flex gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Marketplace</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Investors</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Help</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">account_circle</button>
+<button class="hidden md:block bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:opacity-90 transition-all cursor-pointer">List a Property</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-desktop py-xl">
+<!-- Stepper -->
+<div class="mb-xl max-w-2xl mx-auto flex items-center justify-between">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</div>
+<span class="font-label-sm text-label-sm text-primary">Review</span>
+</div>
+<div class="stepper-line active mx-4"></div>
+<div class="flex flex-col items-center gap-xs">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</div>
+<span class="font-label-sm text-label-sm text-primary">Payment</span>
+</div>
+<div class="stepper-line mx-4"></div>
+<div class="flex flex-col items-center gap-xs opacity-50">
+<div class="w-10 h-10 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center font-bold">3</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confirmation</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left: Payment Options -->
+<div class="lg:col-span-7 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Payment Method</h2>
+<p class="text-on-surface-variant mb-lg">Select your preferred local payment provider for secure processing.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Orange Money -->
+<div class="payment-card-selected border border-outline p-md rounded-xl cursor-pointer flex items-center gap-md transition-all">
+<div class="w-12 h-12 bg-[#FF7900] rounded-lg flex items-center justify-center text-white font-black text-xl">OM</div>
+<div>
+<h3 class="font-label-md text-label-md">Orange Money</h3>
+<p class="text-label-sm opacity-70">Pay with your phone</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-primary" data-weight="fill">check_circle</span>
+</div>
+<!-- MTN MoMo -->
+<div class="border border-outline-variant p-md rounded-xl cursor-pointer flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-12 h-12 bg-[#FFCC00] rounded-lg flex items-center justify-center text-black font-black text-xl">momo</div>
+<div>
+<h3 class="font-label-md text-label-md">MTN Mobile Money</h3>
+<p class="text-label-sm opacity-70">Instant digital wallet</p>
+</div>
+</div>
+<!-- Card Payment -->
+<div class="border border-outline-variant p-md rounded-xl cursor-pointer flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-12 h-12 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md">Credit / Debit Card</h3>
+<p class="text-label-sm opacity-70">Visa or Mastercard</p>
+</div>
+</div>
+<!-- Express Union -->
+<div class="border border-outline-variant p-md rounded-xl cursor-pointer flex items-center gap-md hover:bg-surface-container-low transition-all">
+<div class="w-12 h-12 bg-[#E11B22] rounded-lg flex items-center justify-center text-white font-black text-xl">EU</div>
+<div>
+<h3 class="font-label-md text-label-md">Express Union</h3>
+<p class="text-label-sm opacity-70">Local transfer</p>
+</div>
+</div>
+</div>
+<div class="mt-lg">
+<label class="block font-label-md text-label-md text-on-surface mb-sm">Phone Number (Mobile Money)</label>
+<div class="flex gap-sm">
+<div class="w-20 bg-surface-container-low border border-outline-variant rounded-lg flex items-center justify-center gap-xs font-label-md">
+<img alt="Cameroon Flag" class="w-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyWbxVsHDmBTA6NG6PAvXxnj412xxynJV39BatZAbTqBUxWpgvkTkQJyOP35abWdzCZHQ8kMgpJzvmkxCU9MopsQLOCCs0Yd12J4_TjTsF4vuZVHo5WnZjEoIqfqRH-jcPSHAbnd0wK5i-PU68qXFqLOwRoHnoS_fYuayZgel5fOYjygeYSFydYd6uNUSb3G0YZmsRtAc3Qfe3PORHwLwDgKAjug4zZCR1zxBD7ON53NhKklJNVwEcStNO_aJ6ddvs9qxIZRtxrgw"/>
+                                +237
+                            </div>
+<input class="flex-grow bg-white border border-outline-variant rounded-lg px-md py-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="6XX XXX XXX" type="text"/>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified_user</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Secure Verification</h2>
+</div>
+<p class="text-on-surface-variant mb-md">ImmoCamer ensures that all agents and property details are verified by our field officers to protect you from real estate fraud in Cameroon.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                            Escrow payment protection
+                        </li>
+<li class="flex items-center gap-sm text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+                            Title deed pre-verification
+                        </li>
+</ul>
+</section>
+</div>
+<!-- Right: Order Summary -->
+<div class="lg:col-span-5">
+<div class="sticky top-24 space-y-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="h-40 relative">
+<img alt="Property" class="w-full h-full object-cover" data-alt="A wide-angle, high-end architectural photograph of a modern luxury villa in Yaoundé, featuring clean lines, large glass windows, and a lush tropical garden under a bright, clear blue sky. The lighting is crisp and midday, emphasizing the premium forest green and sunny yellow tones of the surrounding landscape. The image exudes an atmosphere of institutional trust, security, and high-value real estate investment in a contemporary West African urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfRMJ13w6MVlVadYeV1iGizOPwc1Ivsgb7Bf3akyTDSYyNP520muiZzb_oCCVN1mUNpNsLMmZfxG9CV_n4Bf6lk1IPuAORjDapxbS3umqD1GiCkv0OX5iRl8yXyOYbC6wTBX4t_LW9cPioUaDD35bqL6clxKRaK-Thdk8OG48aK5eofMVsqnOMzerMo9gV04_8e39J0aw99dzRLLdqGPYMYoylhq6mz50-7zGhFNteWCA8CBt4wbklBAnvGQLSWnFVJqznV6hq-10"/>
+<div class="absolute top-md right-md bg-primary text-on-primary px-sm py-xs rounded font-label-sm flex items-center gap-xs shadow-md">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">verified</span>
+                                Verified Listing
+                            </div>
+</div>
+<div class="p-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Professional Property Visit</h3>
+<p class="text-on-surface-variant text-label-md mb-lg">Bastos, Yaoundé • Appt. 4B</p>
+<hr class="border-outline-variant mb-lg"/>
+<div class="space-y-md mb-lg">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Visit Fee</span>
+<span class="font-label-md">4,500 XAF</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Service Verification Tax</span>
+<span class="font-label-md">500 XAF</span>
+</div>
+</div>
+<hr class="border-outline-variant mb-lg"/>
+<div class="flex justify-between items-end mb-xl">
+<div>
+<span class="text-label-sm text-on-surface-variant block uppercase tracking-wider">Total Amount</span>
+<span class="font-headline-md text-headline-md text-primary">5,000 XAF</span>
+</div>
+<div class="text-right">
+<span class="text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed px-sm py-xs rounded-full">Secure Escrow</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-md rounded-xl hover:bg-primary-container transition-all active:scale-95 shadow-md flex items-center justify-center gap-md">
+                                Confirm &amp; Proceed
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="mt-md text-center text-label-sm text-on-surface-variant">
+                                By clicking, you agree to the <a class="underline" href="#">Terms of Service</a>
+</p>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="flex justify-center gap-lg grayscale opacity-50">
+<img alt="Visa" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC8n2JtjyCSTXrsgQ2W2To2s2iztDULLfs8TS2qAtNSlzrmRHUqIp8QhI3dBGPXoFqgibPTy1uK1HYf1iyAwyr45TrYzRvMOcWgXGhn8gg0z1jyqCHUkZDZnEDUX_CJsVYr3PCQQbn7NaA5mBXQelv6l6Ryk4ktHOocdQNf0AF0qgA-hQpxFbQMJFSA__GbYOzGKCgEXsSejbTjPnZ_t1ftT6EaBsWIQC9MB6GRPJmAeDDHt16Blc7O6vQ34uORiqo5XQpfzrYxUg"/>
+<img alt="Mastercard" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEm1Te4BAKWJzWtyinZyPzuATEG0Jh-vnSUKuJ6EZGrPsikrWHzMp4d3W1CSlt1EXEt21_fjcQlugFw7dJLCyFd_aNI9oVR5-6D4AwWak-0LoqZ1XB2l8PV0GIFNqPGrFjzvhZWhpONrCTcwrX7Hdf-6vFKECs7L9aZ0WyVnugOkiCb8lz15u8far_FydI5Rd0OHiwNSDpD9cvaABiLK0-RgDwsb6mzqHxITgTA5lHSFrU-kpmm1pyqBoYoE5imB-wjRGlRz1Mbg8"/>
+<div class="font-black text-on-surface-variant text-sm">MOBILE MONEY SECURE</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant py-xl mt-xl">
+<div class="w-full px-margin-desktop max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="flex flex-col items-center md:items-start gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary">ImmoCamer</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 ImmoCamer. All rights reserved. Registered in Cameroon.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">About Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Land Title Verification Guide</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Mobile Money FAQ</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic for payment selection
+        document.querySelectorAll('.payment-card-selected, .border-outline-variant').forEach(card => {
+            if(card.parentElement.classList.contains('grid-cols-2')) {
+                card.addEventListener('click', () => {
+                    // Remove state from others
+                    document.querySelectorAll('.payment-card-selected').forEach(c => {
+                        c.classList.remove('payment-card-selected', 'border-outline');
+                        c.classList.add('border-outline-variant');
+                        const check = c.querySelector('.check_circle');
+                        if(check) check.remove();
+                    });
+                    
+                    // Add state to this
+                    card.classList.add('payment-card-selected', 'border-outline');
+                    card.classList.remove('border-outline-variant');
+                    
+                    // Add checkmark if not there
+                    if(!card.querySelector('.check_circle')) {
+                        const span = document.createElement('span');
+                        span.className = 'material-symbols-outlined ml-auto text-primary check_circle';
+                        span.textContent = 'check_circle';
+                        span.style.fontVariationSettings = "'FILL' 1";
+                        card.appendChild(span);
+                    }
+                });
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Agent Dashboard | ImmoCamer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#00522a",
+                    "surface": "#f7f9fb",
+                    "surface-tint": "#0b6d3b",
+                    "on-surface-variant": "#3f4940",
+                    "background": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#83d99c",
+                    "primary": "#004d27",
+                    "on-primary-fixed": "#00210e",
+                    "outline-variant": "#bec9be",
+                    "on-secondary-fixed": "#2a1800",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary": "#835400",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-fixed": "#d8e3fb",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed-dim": "#ffb956",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed": "#ffddb5",
+                    "surface-container-low": "#f2f4f6",
+                    "on-surface": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#633f00",
+                    "primary-container": "#006837",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#9ef6b6",
+                    "surface-dim": "#d8dadc",
+                    "on-error-container": "#93000a",
+                    "outline": "#6f7a70",
+                    "inverse-primary": "#83d99c",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "on-tertiary-fixed": "#111c2d",
+                    "on-secondary-container": "#6e4600",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#384356",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "secondary-container": "#fdb242",
+                    "on-tertiary-container": "#c6d1e9",
+                    "on-primary-container": "#8ee4a6",
+                    "tertiary-container": "#4f5a6e",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container": "#eceef0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "margin-desktop": "48px",
+                    "sm": "8px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-container {
+            background-image: radial-gradient(circle at 2px 2px, #e2e8f0 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col p-md bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="mb-xl px-md">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">ImmoCamer</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Enterprise Portal</p>
+</div>
+<div class="flex items-center gap-md mb-xl px-md py-sm bg-surface-container-highest rounded-lg">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+                JD
+            </div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md truncate">Jean Dupont</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">12 Properties</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg px-md py-sm transition-all scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-label-md text-label-md">My Portfolio</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label-md text-label-md">Verified Titles</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs">
+<div class="p-md bg-secondary-container text-on-secondary-container rounded-xl mb-md">
+<p class="font-label-md text-label-md font-bold mb-1">Go Premium</p>
+<p class="font-label-sm text-label-sm mb-3">Get unlimited property listings and title checks.</p>
+<button class="w-full py-2 bg-on-secondary-container text-secondary-container font-bold rounded-lg text-sm">Upgrade to Pro</button>
+</div>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen p-margin-desktop bg-surface">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Agent Dashboard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back, Jean. Here's what's happening with your portfolio today.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-lg py-sm border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors">Contact Sales</button>
+<button class="px-lg py-sm bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                    List a Property
+                </button>
+</div>
+</header>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+<!-- Active Listings -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="home_work">home_work</span>
+</div>
+<span class="text-on-primary-fixed-variant font-label-sm bg-primary-fixed px-sm py-xs rounded-full">+12% vs last month</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Active Listings</p>
+<p class="font-headline-md text-headline-md text-on-surface">42 Units</p>
+</div>
+<!-- Pending Visits -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+</div>
+<span class="text-on-secondary-fixed-variant font-label-sm bg-secondary-fixed px-sm py-xs rounded-full">8 Requests today</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Pending Visits</p>
+<p class="font-headline-md text-headline-md text-on-surface">15 Meetings</p>
+</div>
+<!-- Total Commission -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-on-tertiary-fixed-variant font-label-sm bg-tertiary-fixed px-sm py-xs rounded-full">Payout next week</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Total Commission (XAF)</p>
+<p class="font-headline-md text-headline-md text-on-surface">2,450,000 FCFA</p>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Recent Visit Requests Table -->
+<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Visit Requests</h3>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="filter_list">filter_list</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">
+<tr>
+<th class="px-lg py-md">Requester</th>
+<th class="px-lg py-md">Property</th>
+<th class="px-lg py-md">Date &amp; Time</th>
+<th class="px-lg py-md">Status</th>
+<th class="px-lg py-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-lg flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young Cameroonian businessman in a clean white shirt, looking confident and smiling slightly against a soft blurred urban background. High contrast, warm natural lighting, professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZXzSwZE3TpE3xY_X9oQZqKXMq9-ax3PSOUsBo38RRnhmcA87sC2WZvlJV1Vx8j5Yeb1Yt40khHNueW5nLf87j5DA50WQ6pJA_YZSOwWSgmSLOO1e1LUtTpSodJjjCLvnFuy8K8M7cuYU4Hp8FjDur63rpmT96p0V2t2ixU7gZ0Vt8lbhQreeSPKq0AdPCioclLOkBrOyBK_AaMXAxLTnq2MR8ROPx1zifGDfPIwzBtSLPZm-Ff_oMRQV27LN9CY6yBBgaA44N12c"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Amadou Bello</p>
+<p class="text-[12px] text-on-surface-variant">CNI: Not Verified</p>
+</div>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Villa Bastos</p>
+<p class="text-[12px] text-on-surface-variant">Yaoundé</p>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Oct 12, 2024</p>
+<p class="text-[12px] text-on-surface-variant">14:30 PM</p>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-full">Needs CNI</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-sm">
+<button class="px-sm py-1 border border-primary text-primary rounded-lg font-label-sm text-label-sm hover:bg-primary hover:text-white transition-all">Verify CNI</button>
+<button class="p-1 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined" data-icon="chat">chat</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-lg flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young female professional in Cameroon, dressed in a stylish business suit with a bright, welcoming expression. The lighting is crisp and modern, featuring a corporate office environment with a palette of soft teals and neutral tones. Highly detailed portrait photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBip7h-gkEiPi9XtICeiiDCI-7COksBzapj4vrzQxSLP25vRD2Lhxtu21aP9eZEXqdAWct5HqNpzuuMNW5QjYEULlkrQA_EF9WZjd-hZxx2MndN04vLuBDbstbUY4iUtGM-jR-ABop38gazgw2hbpWd8ml-p0mMZQBlqUj6UosVvsCyLV4GHRqCkhUN-jcyuWNW8hgxnrP8o09tkO_Pw9ij9CSnikrUKzQ2COA5qONweVFcW8NgIQTdP7a1s5b3MmS8Ess9xFraCD0"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Nathalie Eto'o</p>
+<p class="text-[12px] text-on-surface-variant text-primary font-bold">Verified Agent</p>
+</div>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Bonapriso Studio</p>
+<p class="text-[12px] text-on-surface-variant">Douala</p>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Oct 14, 2024</p>
+<p class="text-[12px] text-on-surface-variant">10:00 AM</p>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm rounded-full">Scheduled</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-sm">
+<button class="px-sm py-1 border border-outline text-on-surface-variant rounded-lg font-label-sm text-label-sm hover:bg-surface-variant transition-all">Upload Certificate</button>
+<button class="p-1 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined" data-icon="chat">chat</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-lg flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a professional male architect in a bright light-mode setting. He is wearing high-end eyeglasses and looks directly at the camera with trust and authority. The aesthetic is clean, corporate, and minimalist with a focus on high resolution detail and sharp lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwUOlIEu9gBxGaqKhasd3rDGh5hVLzVDe-8wE-0H7oNDXwqoS0dh-7KVoMkWjg9CSEr0jkxSS1ShbwqlGGziAk9B0twyDn6vU-qe_FZuX_xh2RqQnc1N5uz6VDwlRfoU3vmuum1ocSS5fUJAH0FeqUb1UOOm-hUuVMdRz4d7Dmzjyr6Tser5kR21nVh8E2MF6mFapcE6RvQ1VMleqMS0Jbif_3N1xhQFdfXaqGHkHT4u1z7LYsnvENwGD8fQruduwrkFA7mfi91nQ"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Serge Tchakounté</p>
+<p class="text-[12px] text-on-surface-variant">Landlord</p>
+</div>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Kribi Beach Plot</p>
+<p class="text-[12px] text-on-surface-variant">Kribi</p>
+</td>
+<td class="px-lg py-lg">
+<p class="font-label-md text-label-md">Oct 15, 2024</p>
+<p class="text-[12px] text-on-surface-variant">16:45 PM</p>
+</td>
+<td class="px-lg py-lg">
+<span class="px-sm py-1 bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm rounded-full">Pending Approval</span>
+</td>
+<td class="px-lg py-lg text-right">
+<div class="flex justify-end gap-sm">
+<button class="px-sm py-1 border border-primary text-primary rounded-lg font-label-sm text-label-sm hover:bg-primary hover:text-white transition-all">Verify CNI</button>
+<button class="p-1 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined" data-icon="chat">chat</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-md text-center bg-surface-container-low">
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">View all visit requests</a>
+</div>
+</section>
+<!-- Lead Quality Chart -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg flex flex-col h-full">
+<div class="mb-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface">Leads Quality</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Weekly analytics overview</p>
+</div>
+<div class="flex-1 relative chart-container border-l border-b border-outline-variant flex items-end justify-between gap-md p-md mb-md">
+<!-- Fake Chart Bars -->
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-primary-container rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 120px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mon</span>
+</div>
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-primary rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 180px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tue</span>
+</div>
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-primary-container rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 150px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wed</span>
+</div>
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-secondary-container rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 220px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thu</span>
+</div>
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-primary rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 190px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fri</span>
+</div>
+<div class="flex flex-col items-center gap-sm w-full group">
+<div class="w-full bg-primary-container rounded-t-lg transition-all duration-500 hover:brightness-110" style="height: 100px;"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sat</span>
+</div>
+</div>
+<div class="space-y-md">
+<div class="flex justify-between items-center text-on-surface">
+<div class="flex items-center gap-sm">
+<span class="w-3 h-3 bg-secondary-container rounded-full"></span>
+<span class="font-label-md text-label-md">High Intent</span>
+</div>
+<span class="font-label-md text-label-md">64%</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<div class="flex items-center gap-sm">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="font-label-md text-label-md">Serious Browsing</span>
+</div>
+<span class="font-label-md text-label-md">22%</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<div class="flex items-center gap-sm">
+<span class="w-3 h-3 bg-primary-container rounded-full"></span>
+<span class="font-label-md text-label-md">General Inquiry</span>
+</div>
+<span class="font-label-md text-label-md">14%</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Featured Property Preview (Bento Style) -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="md:col-span-2 relative h-64 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern luxury villa in the Bastos neighborhood of Yaoundé, Cameroon. The house features high ceilings, floor-to-ceiling glass windows, a lush green tropical garden, and a clear blue swimming pool. The architectural style is minimalist and elegant, bathed in the golden light of late afternoon. 8k resolution, professional architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY70UBiMgQVlDKYhI8uFbA69YXG2DevEQ3eL7n_1tDh3WzXf2QwxpB51kuLw80WtW2Zp5h_oLLUp1SN-VfW3OSkz3-whFTGqDwPjAk5mBGwYuboho6higoqUGT-vG9ASrVRdaLMg3o_E25iRi6PrhUcimgFuevysgGZMxvmij9MRxCIpST3gNNvxNoffL2UAyyzSG2iurJV8dYKqIp-tH-0TZ6KrIBDDaqOeJVEZ9Z00ni1YkCTcqzU1em54vfhC3KdIpMnqJfd-c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-lg flex flex-col justify-end">
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-sm py-xs w-fit rounded mb-sm">Premium Listing</span>
+<h4 class="text-white font-headline-md text-headline-md">Luxury Residence Bastos</h4>
+<p class="text-white/80 font-body-md text-body-md">Currently 12 Pending Visits</p>
+</div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-lg rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-[40px]" data-icon="bolt">bolt</span>
+<div>
+<h4 class="font-headline-md text-headline-md">Boost Visibility</h4>
+<p class="font-label-sm text-label-sm">Promote your listings to the top of search results for 48 hours.</p>
+</div>
+<button class="w-full py-2 bg-on-primary-container text-primary-container font-bold rounded-lg text-sm mt-md">Activate Boost</button>
+</div>
+<div class="bg-surface-container-highest p-lg rounded-xl flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-primary mb-md shadow-sm">
+<span class="material-symbols-outlined text-[32px]" data-icon="help_outline">help_outline</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold">Need Help?</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md">Our support team is online to assist with title verifications.</p>
+<button class="text-primary font-bold hover:underline">Contact Support</button>
+</div>
+</section>
+</main>
+<!-- Global Scripts -->
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+
+        // Search Bar Logic (if needed)
+        // Add smooth table row animations
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach((row, index) => {
+            row.style.opacity = '0';
+            row.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                row.style.transition = 'all 0.4s ease-out';
+                row.style.opacity = '1';
+                row.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    </script>
+</body></html>

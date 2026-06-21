@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ImmoCamer Agent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .bento-item-large {
+            grid-column: span 2;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e6e8ea",
+                      "primary-container": "#006837",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-tint": "#0b6d3b",
+                      "secondary-fixed-dim": "#ffb956",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#00210e",
+                      "surface": "#f7f9fb",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#c6d1e9",
+                      "secondary": "#835400",
+                      "on-secondary-fixed-variant": "#633f00",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-fixed": "#2a1800",
+                      "on-primary-fixed-variant": "#00522a",
+                      "primary-fixed-dim": "#83d99c",
+                      "tertiary": "#384356",
+                      "on-background": "#191c1e",
+                      "surface-bright": "#f7f9fb",
+                      "outline-variant": "#bec9be",
+                      "surface-container": "#eceef0",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "on-secondary-container": "#6e4600",
+                      "primary": "#004d27",
+                      "tertiary-fixed-dim": "#bcc7de",
+                      "surface-variant": "#e0e3e5",
+                      "background": "#f7f9fb",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#191c1e",
+                      "on-surface-variant": "#3f4940",
+                      "on-tertiary-fixed": "#111c2d",
+                      "tertiary-fixed": "#d8e3fb",
+                      "inverse-primary": "#83d99c",
+                      "tertiary-container": "#4f5a6e",
+                      "on-secondary": "#ffffff",
+                      "outline": "#6f7a70",
+                      "secondary-container": "#fdb242",
+                      "surface-container-low": "#f2f4f6",
+                      "secondary-fixed": "#ffddb5",
+                      "on-primary-container": "#8ee4a6",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "primary-fixed": "#9ef6b6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "gutter": "16px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "margin-desktop": "48px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-20">
+<!-- Top AppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
+<div class="flex items-center justify-between px-margin-mobile py-4 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">ImmoCamer</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Agent profile" class="w-full h-full object-cover" data-alt="A professional headshot of a confident African real estate agent in a modern corporate setting. He is wearing a tailored charcoal suit and a crisp white shirt, smiling warmly at the camera. The background is a blurred, high-end office with soft green accents reflecting the ImmoCamer brand colors. Natural sunlight pours in, creating a bright, trustworthy, and sophisticated atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAChyEeYF4TPJtO43ZKpBA3PqXPs7CjeroN_TNPO2icPubuWCYWruuXNswqPiOcZZTCgldt0KoZYlFDuCtow4NdFK50HfuXtJ9SUrLYO154k61dwNKepQN811D3ucFWtwimovU9K4KYjmNn8Ki72JSvi_zNAZAolu3phZCvCNx6196qBI7dAND26oqC99RkB_aZsV6gPVIXYZy7y9NKlPZ-qu37amGNN5xdxDDFYOpXcAlY3wVKfKVfeZK_KtjGTyqSGxdP9eAAXc4"/>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile py-lg max-w-[1280px] mx-auto">
+<!-- Welcome Section -->
+<section class="mb-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface">Bonjour, Jean Dupont</h2>
+<p class="font-body-md text-on-surface-variant">Here is your real estate performance for today.</p>
+</section>
+<!-- Summary Cards (Bento Grid) -->
+<section class="bento-grid mb-xl">
+<!-- Active Listings -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="bg-primary-container text-white text-[10px] px-2 py-0.5 rounded-full font-bold">+12%</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Active Listings</p>
+<p class="font-headline-md text-headline-md text-primary">24</p>
+</div>
+</div>
+<!-- Pending Visits -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="event_upcoming">event_upcoming</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full font-bold">Today</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Pending Visits</p>
+<p class="font-headline-md text-headline-md text-secondary">08</p>
+</div>
+</div>
+<!-- Total Commission -->
+<div class="bento-item-large bg-primary text-on-primary p-md rounded-xl border border-primary flex items-center justify-between">
+<div>
+<p class="font-label-sm opacity-80">Total Commission</p>
+<p class="font-headline-md text-headline-md">450,000 <span class="text-label-md">XAF</span></p>
+</div>
+<div class="bg-white/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="payments">payments</span>
+</div>
+</div>
+</section>
+<!-- Recent Visits & Quick Actions -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-label-md text-on-surface uppercase tracking-wider">Recent Visit Requests</h3>
+<button class="text-primary font-label-md">See All</button>
+</div>
+<!-- Visit Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm space-y-md">
+<div class="flex gap-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Property" class="w-full h-full object-cover" data-alt="A luxurious modern villa in a prime residential neighborhood of Douala, Cameroon. The house features clean white lines, large glass windows, and a lush tropical garden in the foreground. The lighting is golden hour, casting long, soft shadows and highlighting the premium architectural finish. The overall mood is aspirational, high-end, and perfectly aligned with a professional real estate marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaAXOqMDlBqsktHKTc-nXG74pbF6hels-PjNc1Jr2YdVYCQXtmlIfLKv33f1XgAVnPZUF9fWOHLvv-myVgEBduySAlJVnUvgOMgKZbq9DePxg-QIRQ028C_SM5cp45It-HF89pv8POfGX6uJTNNXnDWo-Nd3E550LwR_unESNABQg42mzVRW8i7tsdPqJHSrEZFn0xHx8L168yXx05I25Ks5nmdSY5djtwjtvJNZpLN8WsXQGUCAX2UXb4dAW8qA099i7btb_knsM"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-on-surface truncate">Modern Villa - Bastos, Yaoundé</p>
+<p class="font-label-sm text-on-surface-variant">Request by: <span class="text-on-surface font-semibold">Samuel E.</span></p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-green-100 text-green-800 text-[10px] px-2 py-0.5 rounded-full font-bold">Verified Title</span>
+<span class="text-label-sm text-primary">Today, 14:00</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<button class="flex items-center justify-center gap-2 border border-outline text-on-surface py-2 rounded-lg font-label-sm hover:bg-surface-container-low transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="upload_file">upload_file</span>
+                        Upload Certificat
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-primary text-on-primary py-2 rounded-lg font-label-sm hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                        Verify CNI
+                    </button>
+</div>
+</div>
+<!-- Visit Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm space-y-md">
+<div class="flex gap-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Property" class="w-full h-full object-cover" data-alt="A contemporary family home with a distinctive brick facade and a spacious paved driveway. Located in a secure gated community, the property is surrounded by vibrant green palm trees under a clear blue sky. The lighting is bright and midday, emphasizing the safety and permanence of the structure. The professional photography style conveys trust and institutional quality in the Cameroonian real estate market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsIBaH98-nnLgxfWcgBGsnA2oAgmroyXARe6wY78ObWqIq57bGnBH2Kg3bbWQaYyDJ0GHHQEM4tnWkA9VrPpqkxX4H6eeU3A9BWf_dNWPQDOgJ5k0vrB2sexCl3TjAQvalDQWEoZSNzLmGIgClLmlP_GR-_iqt3uIFOmPOCzsH4rMD0Cj65fncDUxZeuNVXR3zDj29BcIEKKuOWTKEAwmW81a9wR-2JbMnUuBZTYcruRLrjyNEniOIhkNZDk3SIkz1JbT_El21hAs"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-on-surface truncate">Duplex - Bonamoussadi, Douala</p>
+<p class="font-label-sm text-on-surface-variant">Request by: <span class="text-on-surface font-semibold">Marie L.</span></p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] px-2 py-0.5 rounded-full font-bold">Pending CNI</span>
+<span class="text-label-sm text-primary">Tomorrow, 10:30</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<button class="flex items-center justify-center gap-2 border border-outline text-on-surface py-2 rounded-lg font-label-sm hover:bg-surface-container-low transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="upload_file">upload_file</span>
+                        Upload Certificat
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-secondary text-on-secondary py-2 rounded-lg font-label-sm hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                        Verify CNI
+                    </button>
+</div>
+</div>
+</section>
+<!-- Analytics Visual Prompt -->
+<section class="mt-xl">
+<div class="bg-white p-md rounded-xl border border-outline-variant">
+<h3 class="font-label-md text-on-surface-variant mb-md">Leads Quality (Weekly)</h3>
+<div class="h-32 w-full flex items-end justify-between px-2">
+<div class="w-8 bg-primary-container/20 rounded-t-lg h-1/2"></div>
+<div class="w-8 bg-primary-container/40 rounded-t-lg h-2/3"></div>
+<div class="w-8 bg-primary-container/60 rounded-t-lg h-1/3"></div>
+<div class="w-8 bg-primary-container/80 rounded-t-lg h-3/4"></div>
+<div class="w-8 bg-primary rounded-t-lg h-full"></div>
+<div class="w-8 bg-primary-container/40 rounded-t-lg h-1/2"></div>
+<div class="w-8 bg-primary-container/20 rounded-t-lg h-1/3"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-on-surface-variant font-label-sm">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB for quick listing -->
+<button class="fixed bottom-20 right-6 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined font-bold" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-sm md:hidden h-16 flex justify-around items-center px-4">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Favorites</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="real_estate_agent">real_estate_agent</span>
+<span class="font-label-sm text-label-sm">Listings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                if(icon) {
+                    icon.style.transform = 'rotate(10deg) scale(1.1)';
+                    setTimeout(() => {
+                        icon.style.transform = 'rotate(0deg) scale(1)';
+                    }, 200);
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ImmoCamer | Property Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#00522a",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#0b6d3b",
+                        "on-surface-variant": "#3f4940",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed-dim": "#83d99c",
+                        "primary": "#004d27",
+                        "on-primary-fixed": "#00210e",
+                        "outline-variant": "#bec9be",
+                        "on-secondary-fixed": "#2a1800",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary": "#835400",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-fixed": "#d8e3fb",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed-dim": "#ffb956",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#ffddb5",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-container": "#006837",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#9ef6b6",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "outline": "#6f7a70",
+                        "inverse-primary": "#83d99c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "on-tertiary-fixed": "#111c2d",
+                        "on-secondary-container": "#6e4600",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#384356",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "secondary-container": "#fdb242",
+                        "on-secondary-container": "#6e4600",
+                        "on-primary-container": "#8ee4a6",
+                        "tertiary-container": "#4f5a6e",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "margin-desktop": "48px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 12px;
+        }
+        .bento-item-1 { grid-column: span 2; grid-row: span 2; }
+        .bento-item-2 { grid-column: span 1; grid-row: span 1; }
+        .bento-item-3 { grid-column: span 1; grid-row: span 1; }
+        .bento-item-4 { grid-column: span 1; grid-row: span 1; }
+        .bento-item-5 { grid-column: span 1; grid-row: span 1; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #004d27; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline h-20 sticky top-0 z-50">
+<nav class="flex justify-between items-center px-margin-desktop w-full max-w-[1280px] mx-auto h-full">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ImmoCamer</span>
+<div class="hidden md:flex gap-lg">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 cursor-pointer active:opacity-80 transition-colors" href="#">Marketplace</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Investors</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Help</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="hidden lg:block px-lg py-sm rounded-lg border border-outline text-primary font-label-md hover:bg-surface-container-low transition-all">Contact Sales</button>
+<button class="px-lg py-sm rounded-lg bg-primary text-on-primary font-label-md hover:opacity-90 transition-all">List a Property</button>
+<div class="flex items-center gap-sm ml-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-xs hover:bg-surface-variant rounded-full">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-xs hover:bg-surface-variant rounded-full">account_circle</span>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-[1280px] mx-auto px-margin-desktop py-xl">
+<!-- Breadcrumbs & Header -->
+<section class="mb-lg">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm mb-sm">
+<span>Marketplace</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Douala</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Bonapriso Executive Villa</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Bonapriso Executive Contemporary Villa</h1>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-md">Rue 3.42, Bonapriso, Douala, Cameroon</span>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-sm py-xs rounded flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm uppercase font-bold">Verified Title</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-lg text-headline-lg text-primary">450,000,000 XAF</div>
+<div class="font-label-sm text-on-surface-variant">Market Price | Negotiable</div>
+</div>
+</div>
+</section>
+<!-- Bento Hero Gallery -->
+<section class="bento-grid mb-xl overflow-hidden rounded-xl">
+<div class="bento-item-1 relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sprawling, ultra-modern luxury villa in the heart of Douala, Bonapriso. The architecture features clean white lines, large floor-to-ceiling glass windows, and a lush tropical garden in the foreground. The lighting is golden hour sun, casting soft, long shadows. The overall aesthetic is professional, secure, and prestigious, aligning with the ImmoCamer corporate brand colors of forest green and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWvOpeX9PKVebHq_fSt9uFdtYYaHhpcKoQ6o88q1rS9H6wT6OCtL0pH7tG4mzN8VQqdjwlc4_sQDzFWmgrk_fduhq_dCN2-qdZbEWjrhqDW16alEItHPyVnttYhyX0cbPJ65EFHIkqF-Y9TswdAGjs4IogJijBoRXGFi6Si4rNe4taZpHS1tu95YTotv1vKFTQRvQah6q7tzJRJxRlYt2JCBXpHgCuseWgRUgftiAmGWKBaHc8kkhmEb-Pr-15k0R_vAumMpa9W0I"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="bento-item-2 overflow-hidden cursor-pointer group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern interior living room of a high-end Douala villa with minimalist furniture, marble flooring, and high ceilings. Soft ambient lighting creates an inviting and sophisticated atmosphere. The color palette consists of neutral tones with subtle green accents that mirror the brand's primary color, reflecting high-quality residential standards in Cameroon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjuxOgU0j6QAEK0TCvc2DmqX-QJGB319Ms1RU3wZN_yn9kbU0kML6AGV9c7tbClC998RGY1kWz0KonyhwGHOPTL2pr11kOzr8tkX5UMUe3bDMHdCSVS2Z13Gq6pnAhL_jcjtMT28HJm2kadE4SnOWVJpwTPiTIk8t-GSLB0LdT57qHMfw6kXhidO5mRO3OEUStN4-SQ46ZulUusV0XadCHw1jG-ymZNL3MLaoGWyzVaw6r9ZQZnUvjltnPPo-CRu8gZKkalJJwcY"/>
+</div>
+<div class="bento-item-3 overflow-hidden cursor-pointer group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Exterior view of a crystal clear blue swimming pool at a luxury residence in Cameroon, surrounded by polished stone tiling and designer loungers. The sky is a bright, clear blue, suggesting a high-status property. The composition is clean and orderly, emphasizing the premium quality and security of the real estate listing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuT9MUCaQp8xXTrwRVvnfGRSPhO62Tmvnx4MmYFqWG_te0k720lHfZZK4y0EeYFGugNEiKWucXTxRydi0NKlULuxWxKP12Iwy2rR8B8T0374L0SRub1v_4CYiydjxPMH0pD522jy81NvA333M7AK9Oqbzjc9qfwVxsHQFYw3stN17KnLn0QSxzO6lSIp7LOry0U0_kpVLWKD_rbEAqMDNOwt0xMMfju1CMZ31oSIDPEDFl_PM3DjGzTjrxlcvAW5EpILB5lN_RYJ8"/>
+</div>
+<div class="bento-item-4 overflow-hidden cursor-pointer group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A master bedroom suite with modern African-inspired decor, featuring high-quality wooden finishes and large windows overlooking a private balcony. The lighting is bright and natural, highlighting the spaciousness and tranquility of the executive home in a safe, gated community in Douala." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVU9Bx8gyaZGZaSBOsMxc7u29E1Fatw82MG-KTYS3XvHX9YeFldYcMZ-CgZjPgwfJdhbYab48h2yjx4SG9dTbyndc1poiX2_Oun59KKp-IuQ7Oyc9NpHAGZC3-8orvMLV2lA8Vj03MUbjFnjiqxO_-LlVC_qRR9oO_YPU7YmAjssMUWR9FGrcm0UQcRjt_mxiIsQiUoMDs60P4c7cZbHpp5eE96FSOIpAjNMYiVwRPaK13fzNeFrKsjenvRuOU9bAFUufAAjo3mbI"/>
+</div>
+<div class="bento-item-5 relative overflow-hidden cursor-pointer group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gourmet kitchen with stainless steel appliances, dark wood cabinetry, and a large central island with a granite countertop. The space is immaculately clean and well-lit with professional recessed lighting, representing a top-tier functional space in a Cameroonian luxury estate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmrDZcdDcmWzxm5bSuANcnAKhMd-4BnkFnMust6ykdevnfbZreiCBz8RmBg89T7RtL-F0BNENVk_bLUUVzaTU1jRtN_Y1kOACE0J_qgdw_eXncZkTk1Q92I11vjdJdaRnTRVRqnZ4ORVtHhKe6q84RaK7U7-vyyRiEGMXFzlYzSk4qUFi1XgHBo5lUANNtA8XrRfk8kHcWnJ__-c9RPbGOfyp_QO1ZP7uBxvgXuT4oxMHmhpUFVBrgsHKWT7C09dLvyiiQ7pR3O40"/>
+<div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white font-bold text-headline-md">
+                    +12 Photos
+                </div>
+</div>
+</section>
+<!-- Main Content & Sidebar -->
+<div class="grid grid-cols-12 gap-xl">
+<!-- Content Left -->
+<div class="col-span-8 space-y-xl">
+<!-- Key Features Cards -->
+<div class="grid grid-cols-3 gap-md">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-xs text-[32px]">square_foot</span>
+<span class="font-label-sm text-on-surface-variant uppercase">Total Space</span>
+<span class="font-headline-md text-on-surface">550 m²</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-xs text-[32px]">security</span>
+<span class="font-label-sm text-on-surface-variant uppercase">Security</span>
+<span class="font-headline-md text-on-surface">24/7 Guard</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-xs text-[32px]">bolt</span>
+<span class="font-label-sm text-on-surface-variant uppercase">Eneo Backup</span>
+<span class="font-headline-md text-on-surface">50KVA Gen</span>
+</div>
+</div>
+<!-- Verified Title Section -->
+<section class="bg-primary-fixed/20 border-2 border-primary-fixed-dim rounded-xl p-lg relative overflow-hidden">
+<div class="relative z-10 flex items-start gap-lg">
+<div class="bg-primary-fixed p-sm rounded-full">
+<span class="material-symbols-outlined text-on-primary-fixed text-[40px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-on-primary-fixed mb-xs">Verified Land Title Authentication</h3>
+<p class="text-on-primary-fixed-variant body-md mb-md">
+                                This property has undergone our 4-step verification process. The "Titre Foncier" (Nº 4582/W) has been authenticated by the Land Registry of Wouri.
+                            </p>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md flex items-center gap-sm">
+                                View Verification Report <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10 text-primary rotate-12">gavel</span>
+</section>
+<!-- Description -->
+<section>
+<h3 class="font-headline-md text-on-surface mb-md">About this Property</h3>
+<div class="space-y-md text-on-surface-variant body-md">
+<p>Experience unparalleled luxury in the heart of Douala's most prestigious neighborhood. This newly built contemporary villa offers a seamless blend of modern architecture and tropical comfort. Every detail has been meticulously curated to provide the ultimate living experience for the discerning professional or family.</p>
+<ul class="grid grid-cols-2 gap-sm">
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> 5 En-suite Bedrooms</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> Private Infinity Pool</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> Smart Home Automation</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> Solar Water Heating</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> 2-Car Private Garage</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[20px]">check_circle</span> Professional Kitchen</li>
+</ul>
+</div>
+</section>
+<!-- Agent Section -->
+<section class="border-t border-outline-variant pt-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-lg">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="A professional headshot of a real estate agent in Douala, Cameroon. A man in a sharp charcoal suit against a clean, corporate background. He has a friendly yet authoritative expression, conveying trustworthiness and expertise in the local Cameroonian property market. The lighting is crisp and flattering, in line with modern business photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxmT2ljouPI0UZPCCz9Txx2I0_j0JhpPqR4cuVRuSZ7isObYumOHRdzumnTYXRV-ArzdVrVcbBANittOw7ekvDMB45ZprTmVI5OrAZiWCI5hFuP2TOjh70lc5wWlH_2OCyXPv-WS_MzvHkjd3r-wC0s9cfGlf7IvDqfthSrtze1jHXtiZOlNHcYIXJbQMeRRQS_iNNysXzxutCakGPxSkq6iHZYeSBCqWZKZXuxnxD-lChwnzPImwMRyH-bXtvI29up3NSqwrrfls"/>
+<div>
+<h4 class="font-headline-md text-on-surface">Jean-Paul Kamga</h4>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="font-label-md">Certified ImmoCamer Platinum Agent</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="px-lg py-sm border border-primary text-primary rounded-lg font-label-md hover:bg-surface-container-low">View Profile</button>
+<button class="px-lg py-sm bg-primary text-on-primary rounded-lg font-label-md">Ask a Question</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<aside class="col-span-4">
+<div class="sticky top-[104px] space-y-lg">
+<!-- Booking Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="font-headline-md text-on-surface mb-md">Interested?</h3>
+<div class="mb-lg space-y-md">
+<div class="bg-secondary-container/10 p-md rounded-lg border border-secondary/20">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-md text-secondary">Visit Fee</span>
+<span class="font-headline-md text-secondary">5,000 XAF</span>
+</div>
+<p class="text-label-sm text-on-secondary-container">Fee is mandatory for security verification and physical property tour.</p>
+</div>
+</div>
+<!-- Pay Button -->
+<button class="w-full bg-secondary py-md rounded-xl text-on-secondary font-bold text-body-lg flex flex-col items-center justify-center gap-1 hover:brightness-95 active:scale-[0.98] transition-all mb-md shadow-lg shadow-secondary/20">
+<span>PAY VISIT FEE</span>
+<div class="flex items-center gap-md grayscale brightness-200 contrast-200">
+<!-- Placeholders for Mobile Money Logos -->
+<div class="h-5 flex items-center gap-1">
+<div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+<span class="text-[10px] font-extrabold tracking-tight">MTN</span>
+</div>
+<div class="h-5 flex items-center gap-1">
+<div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+<span class="text-[10px] font-extrabold tracking-tight">Orange</span>
+</div>
+</div>
+</button>
+<div class="text-center mb-lg">
+<span class="text-label-sm text-on-surface-variant italic">Secure Payment via ImmoPay</span>
+</div>
+<div class="space-y-sm">
+<button class="w-full py-sm rounded-lg border border-outline text-on-surface font-label-md flex items-center justify-center gap-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                                Schedule a Call
+                            </button>
+<button class="w-full py-sm rounded-lg border border-outline text-on-surface font-label-md flex items-center justify-center gap-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                                Share Listing
+                            </button>
+</div>
+</div>
+<!-- Market Insights Card -->
+<div class="bg-surface-container-low rounded-xl p-lg">
+<h4 class="font-label-md text-primary mb-sm uppercase tracking-wider">Area Insights</h4>
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-on-surface-variant">Neighborhood Safety</span>
+<div class="flex gap-0.5">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-outline rounded-full"></span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-on-surface-variant">Growth Potential</span>
+<div class="flex gap-0.5">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline py-xl mt-xl">
+<div class="w-full px-margin-desktop max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-start gap-lg">
+<div class="space-y-md max-w-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ImmoCamer</span>
+<p class="font-label-sm text-on-surface-variant">The most trusted digital real estate ecosystem in Cameroon. We ensure every transaction is secure, verified, and transparent.</p>
+</div>
+<div class="grid grid-cols-2 gap-xl">
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-on-surface">Platform</span>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">About Us</a>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Terms of Service</a>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-on-surface">Resources</span>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Land Title Guide</a>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Mobile Money FAQ</a>
+<a class="font-label-sm text-on-surface-variant hover:underline decoration-primary" href="#">Contact Support</a>
+</div>
+</div>
+</div>
+<div class="w-full px-margin-desktop max-w-[1280px] mx-auto mt-xl pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-on-surface-variant opacity-100 hover:opacity-80">© 2024 ImmoCamer. All rights reserved. Registered in Cameroon.</span>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">language</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for booking card sticky behavior or simple click feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple animation for the verified badge pulse
+        const badge = document.querySelector('.bg-primary-fixed');
+        if(badge) {
+            setInterval(() => {
+                badge.classList.toggle('brightness-110');
+            }, 2000);
+        }
+    </script>
+</body></html>
